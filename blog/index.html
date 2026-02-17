@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — Rafael Amaral | DecomposeAI</title>
+    <meta
+      name="description"
+      content="Artigos sobre tecnologia, IA aplicada, Cloud, DevOps e lideranca tecnica por Rafael Amaral."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog — Rafael Amaral" />
+    <meta property="og:description" content="Tech insights sobre IA, Cloud, DevOps e lideranca tecnica." />
+    <meta property="og:url" content="https://decomposeai.tech/blog/" />
+    <meta property="og:locale" content="pt_BR" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+      .blog-header {
+        padding: 1rem 0 0.5rem;
+      }
+      .blog-header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        margin-bottom: 0.5rem;
+      }
+      .blog-header p {
+        max-width: 600px;
+      }
+      .articles-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 2rem 0 4rem;
+      }
+      .article-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+        text-decoration: none;
+        display: block;
+      }
+      .article-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 30px 70px rgba(15, 23, 42, 0.28);
+        border-color: rgba(56, 189, 248, 0.35);
+      }
+      .article-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .article-thumb-placeholder {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.15),
+          rgba(15, 23, 42, 0.8)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        opacity: 0.5;
+      }
+      .article-card .card-body {
+        padding: 1.5rem;
+      }
+      .article-card h3 {
+        color: var(--text);
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+      .article-card .meta {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        opacity: 0.7;
+        margin-bottom: 0.75rem;
+      }
+      .article-card p {
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+      .no-articles {
+        text-align: center;
+        padding: 4rem 0;
+      }
+      .no-articles p {
+        font-size: 1.1rem;
+      }
+      .nav-links .active {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" style="padding-bottom: 0">
+      <div class="container">
+        <nav class="top-nav">
+          <a class="brand" href="/">Rafael Amaral</a>
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false">
+            <span class="sr-only">Abrir menu</span>
+            &#9776;
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="/#ia">Inovacao IA</a></li>
+            <li><a href="/#sobre">Sobre</a></li>
+            <li><a href="/#experiencia">Experiencia</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="blog-header">
+            <span class="hero-kicker">Tech Insights</span>
+            <h1>Blog</h1>
+            <p>
+              Artigos sobre tecnologia, IA aplicada, Cloud, DevOps e lideranca
+              tecnica.
+            </p>
+          </div>
+          <div class="articles-grid" id="articlesList">
+            <!-- ARTICLES_START -->
+            <a class="article-card" href="2026-02-17-revolucionando-o-desenvolvimento-de-software-com-platform-en.html"><img src="images/2026-02-17-revolucionando-o-desenvolvimento-de-software-com-platform-en.png" alt="Revolucionando o Desenvolvimento de Software com Platform Engineering" loading="lazy"><div class="card-body"><div class="meta">17 de fevereiro de 2026 &bull; 828 palavras</div><h3>Revolucionando o Desenvolvimento de Software com Platform Engineering</h3><p>Como a Engenharia de Plataformas molda a nova era de produtividade para desenvolvedores</p></div></a>
+            <!-- ARTICLES_END -->
+          </div>
+          <div class="no-articles" id="noArticles" style="display:none">
+            <p>Em breve, novos artigos serao publicados aqui.</p>
+            <a class="btn primary" href="/" style="margin-top: 1.5rem; display: inline-flex">
+              Voltar ao inicio
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy;
+          <span id="currentYear"></span>
+          Rafael Amaral — Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const isOpened = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpened));
+        navLinks.classList.toggle("open");
+      });
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+      // Hide "no articles" if there are articles
+      const grid = document.getElementById("articlesList");
+      const noArt = document.getElementById("noArticles");
+      if (grid && grid.children.length > 2) {
+        noArt.style.display = "none";
+      } else {
+        // grid shown;
+      }
+    </script>
+  </body>
+</html>
