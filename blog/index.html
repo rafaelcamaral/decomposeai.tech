@@ -13,23 +13,35 @@
     <meta property="og:description" content="Tech insights sobre IA, Cloud, DevOps e lideranca tecnica." />
     <meta property="og:url" content="https://decomposeai.tech/blog/" />
     <meta property="og:locale" content="pt_BR" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/styles.css" />
     <style>
       .blog-header {
-        padding: 1rem 0 0.5rem;
+        padding: 5rem 0 1rem;
       }
       .blog-header h1 {
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
         margin-bottom: 0.5rem;
       }
       .blog-header p {
         max-width: 600px;
+      }
+      .blog-header .section-label {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
       }
       .articles-grid {
         display: grid;
@@ -103,30 +115,28 @@
     </style>
   </head>
   <body>
-    <header class="hero" style="padding-bottom: 0">
-      <div class="container">
-        <nav class="top-nav">
-          <a class="brand" href="/">Rafael Amaral</a>
-          <button id="menuToggle" class="menu-toggle" aria-expanded="false">
-            <span class="sr-only">Abrir menu</span>
-            &#9776;
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="/#ia">Inovacao IA</a></li>
-            <li><a href="/#sobre">Sobre</a></li>
-            <li><a href="/#experiencia">Experiencia</a></li>
-            <li><a href="/blog/" class="active">Blog</a></li>
-            <li><a href="/#contato">Contato</a></li>
-          </ul>
-        </nav>
+    <nav class="site-nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/">Rafael<span>.</span></a>
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false">
+          <span class="sr-only">Abrir menu</span>
+          &#9776;
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/#ia">IA</a></li>
+          <li><a href="/#experiencia">Experiência</a></li>
+          <li><a href="/#projetos">Projetos</a></li>
+          <li><a href="/blog/" class="active">Blog</a></li>
+          <li><a href="/#contato">Contato</a></li>
+        </ul>
       </div>
-    </header>
+    </nav>
 
     <main>
       <section class="section">
         <div class="container">
           <div class="blog-header">
-            <span class="hero-kicker">Tech Insights</span>
+            <span class="section-label">Tech Insights</span>
             <h1>Blog</h1>
             <p>
               Artigos sobre tecnologia, IA aplicada, Cloud, DevOps e lideranca
